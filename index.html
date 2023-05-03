@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<style>
+body {
+	font-family: sans-serif;
+	background-color: #c56cf0;
+	color:  #3d3d3d;
+}
+
+header {
+	text-align: center;
+	letter-spacing: 0.25em;
+	background-color: #67e6dc;
+	color: #c56cf0;
+	margin: 1em auto 1em auto;
+	width: 90vw;
+	padding: 0.5em 0 0.5em 0;
+}
+
+header > * {
+	margin: 0;
+	padding: 0;
+}
+
+
+main {
+	display: grid;
+	gap: 1em;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+section {
+	text-align: center;
+	background-color: #fff;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	padding: 1em;
+	display: grid;
+	grid-template-columns: 1fr;
+	transition: box-shadow 300ms ease-in, background-color 300ms ease-in;
+	background-color: #e6e6e6;
+}
+
+section:hover {
+	transition: box-shadow 300ms ease-out, background-color 300ms ease-out;
+	box-shadow: 0 8px 32px 0 rgba(0,0,0,0.4);
+	background-color: white;
+}
+
+.time {
+	letter-spacing: 0.125em;
+	font-size: 1.5em;
+}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Everything Everytime All at Once</h1>
+			<p>
+				Collections of various standards for representing current time.
+			</p>
+		</header>
+		<main>
+			<section>
+				<div class="time" id="utc"></div>
+				<p>UTC time</p>
+			</section>
+			<section>
+				<div class="time" id="local"></div>
+				<p>Local time in timezone <span class="local-timezone"></span></p>
+			</section>
+			<section>
+				<div class="time" id="utc6"></div>
+				<p>UTC time in <a href="https://www.seximal.net/">base 6</a></p>
+			</section>
+			<section>
+				<div class="time" id="local6"></div>
+				<p>Local time in timezone <span class="local-timezone"></span> and <a href="https://www.seximal.net/">base 6</a>
+			</section>
+			<section>
+				<div class="time" id="beat"></div>
+				<p><a href="https://en.wikipedia.org/wiki/Swatch_Internet_Time">.beat time</a> aka Swatch Internet Time, based on UTC+1</p>
+			</section>
+			<section>
+				<div class="time" id="net"></div>
+				<p><a href="https://en.wikipedia.org/wiki/New_Earth_Time">New Earth Time</a>,<br/> based on local time</p>
+			</section>
+			<section>
+				<div class="time" id="hexclock"></div>
+				<p><a href="http://www.intuitor.com/hex/hexclock.html">Hexclock</a> based on local time
+			</section>
+		</main>
+		<script src="index.js"></script>
+	</body>
+</html>
