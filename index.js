@@ -79,6 +79,15 @@ function unix() {
 	setTimeout(unix, 1000);
 }
 
+function unix6() {
+	document.getElementById('unix6').textContent = Math.floor(Date.now()/1000).toString(6);
+	setTimeout(unix6, 1000);
+}
+
+function unix16() {
+	document.getElementById('unix16').textContent = Math.floor(Date.now()/1000).toString(16).toUpperCase();
+	setTimeout(unix16, 1000);
+}
 
 for (const element of document.querySelectorAll('.local-timezone')) {
 	element.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -92,3 +101,5 @@ beat();
 net();
 hexclock();
 unix();
+unix6();
+unix16();
