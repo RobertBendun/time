@@ -71,7 +71,12 @@ function hexclock() {
 
 	document.getElementById('hexclock').textContent = `${h}_${m}_${s}`;
 
-	setTimeout(hexclock, 150);
+	setTimeout(hexclock, 300);
+}
+
+function unix() {
+	document.getElementById('unix').textContent = Math.floor(Date.now()/1000);
+	setTimeout(unix, 1000);
 }
 
 
@@ -86,3 +91,4 @@ local6();
 beat();
 net();
 hexclock();
+unix();
